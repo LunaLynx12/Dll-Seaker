@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dll-seeker"
+version = "1.0.0"
+description = "Comprehensive DLL analysis tool for Windows"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "DLL Seeker Contributors"}
+]
+keywords = ["dll", "pe", "analysis", "security", "malware", "reverse-engineering"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: Microsoft :: Windows",
+]
+
+dependencies = [
+    "pefile>=2023.2.7",
+    "rich>=13.7.0",
+    "pydot>=1.4.2",
+]
+
+[project.optional-dependencies]
+yara = ["yara-python>=4.3.1"]
+yaml = ["pyyaml>=6.0"]
+all = [
+    "yara-python>=4.3.1",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+dll-seeker = "dll_seeker:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/dll-seeker"
+Documentation = "https://github.com/yourusername/dll-seeker#readme"
+Repository = "https://github.com/yourusername/dll-seeker"
+Issues = "https://github.com/yourusername/dll-seeker/issues"
+
+[tool.setuptools]
+py-modules = [
+    "dll_seeker",
+    "constants",
+    "string_analyzer",
+    "malware_detector",
+    "dll_comparator",
+    "graph_generator",
+    "performance_profiler",
+    "relocation_analyzer",
+    "debug_extractor",
+    "certificate_analyzer",
+    "yara_scanner",
+    "config_manager",
+    "export_formats",
+]
+
